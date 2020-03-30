@@ -1,11 +1,10 @@
 class Game
-
+  attr_accessor :current_player, :question
   def initialize 
     @question = Question.new
     @player1 = Player.new
     @player2 = Player.new
     @current_player = @player1
-    start_game
   end
 
   def status
@@ -16,31 +15,10 @@ class Game
     @current_player = @current_player == @player1 ? @player2 : @player1  
   end
 
-  def start_game
-    while @current_player.lives > 0 
-      @question.print_question
-      answer = take_player_input
-
-      if answer == @question.correct_answer
-        puts "YES! You are correct."
-        status
-        switch_player
-      else
-        puts "Seriously? No!"
-        @current_player.wrong_answer
-        if @current_player.lives == 0
-          game_over
-        else
-          status
-          switch_player
-        end
-      end
-    end
-  end
-
   def game_over
     if @current_player.lives == 0
       puts "Good bye!"
+      exit(0)
     end
   end 
   
