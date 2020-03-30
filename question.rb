@@ -18,5 +18,5 @@ class Question
   def pick_random_num
     rand(20)
   end
-  
+
 end

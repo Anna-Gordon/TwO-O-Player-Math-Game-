@@ -1,16 +1,13 @@
 class Player
   MAX_NUMBER_OF_LIVES = 3
+  attr_accessor :lives
 
   def initialize
     @lives = MAX_NUMBER_OF_LIVES
   end
 
-  def is_alive?
-    @lives > 0
-  end 
-
   def wrong_answer
-    @live -= 1
+    @lives -= 1
   end
 
   def correct_answer
@@ -18,6 +15,11 @@ class Player
   end
 
   def print_status
-    puts "#{@lives}/#{MAX_NUMBER_OF_LIVES}"
+    "#{@lives}/#{MAX_NUMBER_OF_LIVES}"
   end
 end   
+
+# p1 = Player.new
+# puts p1.wrong_answer
+# p1.print_status
+# puts p1.correct_answer
