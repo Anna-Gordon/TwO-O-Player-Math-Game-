@@ -3,16 +3,21 @@ class Question
   def initialize 
     @num1 
     @num2 
+    @player_num
+  end
+
+  def player_num
+    @player_num = @player_num == 1 ? 2 : 1
   end
 
   def print_question
     @num1 = pick_random_num
     @num2 = pick_random_num
-    puts "What does #{@num1} plus #{@num2} equal?"
+    puts "Player #{player_num}: What does #{@num1} plus #{@num2} equal?"
   end 
 
   def correct_answer
-    wright_answer = @num1 + @num2
+    answer = @num1 + @num2
   end
 
   def pick_random_num

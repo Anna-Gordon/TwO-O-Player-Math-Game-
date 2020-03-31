@@ -16,7 +16,8 @@ class Game
   end
 
   def game_over
-    if @current_player.lives == 0
+    if @player1.lives == 0 || @player2.lives == 0
+      puts "Player #{@question.player_num} wins with score of #{@current_player.print_status}!"
       puts "Good bye!"
       exit(0)
     end

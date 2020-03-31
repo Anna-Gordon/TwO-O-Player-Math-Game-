@@ -9,11 +9,11 @@ until game.game_over
   answer = game.take_player_input
   
   if answer == game.question.correct_answer
-      puts "YES! You are correct."
-    else
-      puts "Seriously? No!"
-      game.current_player.wrong_answer
-    end
-    game.switch_player
-    game.status
+    puts "YES! You are correct."
+  else
+    puts "Seriously? No!"
+    game.current_player.wrong_answer
+  end
+  game.switch_player
+  game.status
 end
